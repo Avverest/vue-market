@@ -1,30 +1,27 @@
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <section>
+   <VSidebar :items="routes" />
+  </section>
+  <section class="main-section">
+    <header></header>
+    <main>
+      <BaseTypography variant="h1">Content</BaseTypography>
+    </main>
+  </section>
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import VSidebar from "@/components/BaseSidebar.vue";
+import BaseTypography from "@/components/BaseTypography.vue";
+import { routes } from "@/pages/router.js";
 </script>
 
 <style scoped>
 header {
   line-height: 1.5;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.main-section {
+  flex-grow: 1;
 }
 
 @media (min-width: 1024px) {
